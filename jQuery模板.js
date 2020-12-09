@@ -7,3 +7,8 @@ $(document).ready(function()
 
   })*/
 })
+//简写方法
+$(function()
+{
+  
+})
