@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>get_post测试网页</title>
+    <!--jquery-->
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(function()
+    {
+      //初始化
+      mode=$(".mode:eq(0)").attr("checked",false)
+      mode=$(".mode:eq(1)").attr("checked",false)
+      var pamar=""
+      //http请求类型
+      var mode="null"
+      //var mode_get=""
+      $("#commit").click(function()
+      {
+        var url=$("#url").val()
+        alert("目标url->"+url)
+        pamar=$("#pamar").val()
+
+        alert("请求参数->"+pamar)
+        alert("请求类型"+mode)
+        alert("发出请求！>>>>")
+        if(mode=="get")
+        {
+          $.get("fix.html",function(data,status)
+          {
+            alert(status)
+            alert(data)
+          })
+        }
+        if(mode=="post")
+        {
+          $.post("fix.html",{data1:pamar},function(data,status)
+          {
+            alert(status)
+            alert(data)
+          })
+        }
+        console.log(mode)
+      })
+      //get
+      $(".mode:eq(0)").click(function()
+      {
+        mode=$(".mode:eq(0)")[0].value
+      })
+      //post
+      $(".mode:eq(1)").click(function()
+      {
+        mode=$(".mode:eq(1)")[0].value
+      })
+    })
+    </script>
+  </head>
+  <body>
+    <h1 align="center">get_post测试网页</h1>
+    <input id="url" placeholder="请输入目标URL">
+    <br>
+    <input id="pamar" placeholder="请输入请求参数">
+    <br>
+    请选择类型
+    <input class="mode" type="radio" name="mode" value="get">get
+    <input class="mode" type="radio" name="mode" value="post">post
+    <button id="commit">提交请求</button>
+
+    <p>返回数据</p>
+    <p id="return_data"></p>
+    <p>开发者：128hh苏</p>
+  </body>
+</html>
