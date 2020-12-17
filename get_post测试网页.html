@@ -26,10 +26,11 @@
         alert("发出请求！>>>>")
         if(mode=="get")
         {
-          $.get("fix.html",function(data,status)
+          $.get(url,function(data,status)
           {
             alert(status)
             alert(data)
+            $("#return_data").text(data)
           })
         }
         if(mode=="post")
@@ -57,6 +58,7 @@
   </head>
   <body>
     <h1 align="center">get_post测试网页</h1>
+    <p>测试url->get类型->http://everydayonesentence.biu8.top/Truephp/get_today_sentence.php</p>
     <input id="url" placeholder="请输入目标URL">
     <br>
     <input id="pamar" placeholder="请输入请求参数">
