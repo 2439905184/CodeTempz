@@ -1,5 +1,5 @@
 <?php
-//html http头
+// NOTE: html http头
 header("Content-Type:text/html;charset=utf-8");
 //纯文本http头
 header("Content-Type:text/plain;charset=utf-8");
