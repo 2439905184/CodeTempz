@@ -3,6 +3,7 @@
 //创建cookie key value 类比json 其他参数为expires 和path :'/' expires后面是数字（过期天数）
 //如果不设置 默认存于浏览器内存 path是cookie的作用范围 一般写根目录
 $.cookie('key','value',{'其他参数'})
+$.cookie("key","value",{path:"/"})
 //读取cookie
 $.cookie("key")
 //读取所有cookie信息
