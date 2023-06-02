@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子翻书</title>
+    <style>
+        .bookpage-left
+        {
+            border: solid 2px black;
+            width: 400px;
+            height: 600px;
+        }
+        .bookpage-right
+        {
+            border: solid 2px black;
+            width: 400px;
+            height: 600px;
+        }
+        .bookpage-left,.bookpage-right
+        {
+            vertical-align: top;
+            display: inline-block;
+        }
+        .page-number-l,.page-number-r
+        {
+            position:absolute;
+            bottom: 0;
+            width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button class="left">左翻页</button>
+    <div class="bookpage-left">
+        <h2>标题</h2>
+        <div class="page-number-l">1</div>
+    </div>
+    <div class="bookpage-right">
+        <h5>标题</h5>
+        <div class="page-number-r">2</div>
+    </div>
+                <!-- <img src="1.jpg" alt="" srcset="" width="50%"> -->
+                <button class="right">右翻页</button>
+</body>
+</html>
