@@ -37,5 +37,34 @@
                 <div class="grid-item">8</div>
                 <div class="grid-item">9</div>  
         </div>          
+        <script>
+          function into_menu(p_name)
+{
+    window.open(p_name + "/index.html")
+}
+var main_menu = document.getElementsByClassName("grid-container").item(0)
+
+var item_length = document.getElementsByClassName("grid-item").length
+// var item1 = main_menu.getElementsByClassName("grid-item").item(0)
+// item1.addEventListener("click", function()
+// {
+//     into_menu("漫评")
+// });
+
+for(var i = 0; i<item_length ; i++)
+{
+    (function(index) {
+        var each = main_menu.getElementsByClassName("grid-item").item(index)
+        each.addEventListener("click", function() {
+            console.log(index);
+            // 根据索引值执行相应的代码
+            if(index == 0)
+            {
+                into_menu("漫评")
+            }
+        });
+    })(i);
+}
+        </script>
 </body>
 </html>
