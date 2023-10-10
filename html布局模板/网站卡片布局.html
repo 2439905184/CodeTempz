@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站卡片布局</title>
+    <style>
+        .card,.card-no-img
+        {
+            display: inline-block;
+            border: solid 1px black;
+            width: 250px;
+            height: 233px;
+        }
+        .card >a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        .card-no-img>a
+        {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <a href="#">
+            <!-- <img src="../img/1.png" alt="1"> -->
+            <p>标题</p>
+        </a>
+    </div>
+    <div class="card-no-img">
+        <a href="#">
+            <p>标题</p>
+        </a>
+    </div>
+</body>
+</html>
