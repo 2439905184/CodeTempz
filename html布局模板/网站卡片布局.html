@@ -18,10 +18,16 @@
             text-decoration: none;
             color: black;
         }
-        .card-no-img>a
+        /* 无图像 */
+        .card-no-img > a
         {
             text-decoration: none;
             color: black;
+        }
+        .card-no-img > a > div
+        {
+            width: fit-content;
+            background-color: black;
         }
     </style>
 </head>
@@ -34,8 +40,12 @@
     </div>
     <div class="card-no-img">
         <a href="#">
+            <canvas class="a" width="250px"></canvas>
             <p>标题</p>
         </a>
     </div>
+    <script>
+        var ctx = document.getElementsByClassName("")
+    </script>
 </body>
 </html>
