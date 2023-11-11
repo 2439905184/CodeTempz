@@ -1,0 +1,16 @@
+<div id="img-container1"></div>
+    <script>
+        var imgRoot = document.getElementById("img-container1")
+        // console.log(imgRoot)
+        var start = 3179
+        for(var i=start;i<3246;i++)
+        {
+            // console.log(i)
+            var each = new Image()
+            each.src = "img/"+"IMG_" + i + ".JPG"
+            each.alt = "图片暂缺"
+            each.width = 200
+            console.log(each)
+            imgRoot.append(each)
+        }
+    </script>

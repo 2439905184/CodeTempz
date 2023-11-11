@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */'
+  transform: rotate(90deg);  
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<!-- <ul id="myUL">
+  <li><span class="caret">Beverages</span>
+    <ul class="nested">
+      <li><a href="">Water</a></li>
+      <li>Coffee</li>
+      <li><span class="caret">Tea</span>
+        <ul class="nested">
+          <li>Black Tea</li>
+          <li>White Tea</li>
+          <li><span class="caret">Green Tea</span>
+            <ul class="nested">
+              <li>Sencha</li>
+              <li>Gyokuro</li>
+              <li>Matcha</li>
+              <li>Pi Lo Chun</li>
+            </ul>
+          </li>
+        </ul>
+      </li>  
+    </ul>
+  </li>
+</ul> -->
+<ul id="myUL">
+
+</ul>
+
+<script>
+  // 根据json生成treeview
+  var input_data = {
+  "item1": {
+      "link1":"www.baidu.com",
+      "link2":"www.youtube.com"
+    },
+  "item2": {
+    "link1":"www.aaa",
+    "link2":"www.bbb"
+  }
+};
+
+function generateTreeview(data, parentElement) {
+  for (var key in data) {
+    var value = data[key];
+    
+    // 创建父节点
+    var parentNode = document.createElement("li");
+    parentElement.appendChild(parentNode);
+    
+    // 创建展开/折叠图标
+    var caretNode = document.createElement("span");
+    caretNode.classList.add("caret");
+    caretNode.textContent = key;
+    parentNode.appendChild(caretNode);
+    
+    // 创建子节点
+    var nestedNode = document.createElement("ul");
+    nestedNode.classList.add("nested");
+    parentNode.appendChild(nestedNode);
+    
+    // 若子节点为对象，则递归生成子树
+    if (typeof value === "object") {
+      generateTreeview(value, nestedNode);
+    } else {
+      // 创建子节点文本
+      var childNode = document.createElement("li");
+      var li_link = document.createElement("a")
+      li_link.href = value
+      li_link.innerText = value
+      
+      childNode.append(li_link)
+      // childNode.textContent = value;
+      nestedNode.appendChild(childNode);
+    }
+  }
+}
+
+// 获取根节点元素
+var rootElement = document.getElementById("myUL");
+
+// 生成树形视图
+generateTreeview(input_data, rootElement);
+    // 折叠
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+
+</body>
+</html>
