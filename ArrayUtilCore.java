@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class ArrayUtilCore
 {
-    //Sttring[]转ArrayList<String>
+    //String[]转ArrayList<String>
     public ArrayList<String> toUsefulStringArray(String[] str_array)
     {
         ArrayList<String> result=new ArrayList<String>();
