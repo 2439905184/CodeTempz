@@ -1,5 +1,6 @@
-<!--jquery cookie cdn -->
-<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+// jquery cookie cdn
+// <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
 //创建cookie key value 类比json 其他参数为expires 和path :'/' expires后面是数字（过期天数）
 //如果不设置 默认存于浏览器内存 path是cookie的作用范围 一般写根目录
 $.cookie('key','value',{'其他参数'})
