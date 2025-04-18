@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 //仿jquery
-public class $ {
+public class Selector {
     public static Object select_id(Activity activity,int id)
 	{
 	Object obj=	activity.findViewById(id);
