@@ -1,0 +1,36 @@
+#include <iostream>
+#include <map>
+#include <string>
+#include <iomanip> // 用于控制输出精度
+
+int main() {
+    // 创建频率字典
+    std::map<std::string, double> note_frequencies = {
+        {"C4", 261.63},
+        {"C#4", 277.18},
+        {"Db4", 277.18},
+        {"D4", 293.66},
+        {"D#4", 311.13},
+        {"Eb4", 311.13},
+        {"E4", 329.63},
+        {"F4", 349.23},
+        {"F#4", 369.99},
+        {"Gb4", 369.99},
+        {"G4", 392.00},
+        {"G#4", 415.30},
+        {"Ab4", 415.30},
+        {"A4", 440.00},
+        {"A#4", 466.16},
+        {"Bb4", 466.16},
+        {"B4", 493.88},
+        {"C5", 523.25}
+    };
+
+    // 输出验证
+    std::cout << std::fixed << std::setprecision(2);
+    for (const auto& pair : note_frequencies) {
+        std::cout << pair.first << ": " << pair.second << " Hz\n";
+    }
+
+    return 0;
+}
