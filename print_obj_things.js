@@ -4,8 +4,6 @@ function Litte_sandbox_pring_obj_all(obj)
   var array=[]
   for (var item in obj)
     {
-    //  str +=item+":"+result[item]+"\n";
-    //  console.log(item)
     console.log("object属性->"+obj[item]+"\n");
     array.push(obj[item])
     }
