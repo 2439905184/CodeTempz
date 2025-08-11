@@ -1,4 +1,5 @@
-function set_all_links_blank() {}
+// 文件名：​​set-all-links-blank.js​
+function setAllLinksToBlank() {}
   var links = document.getElementsByTagName('a');
   for (var i = 0; i < links.length; i++) 
   {
