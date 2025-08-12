@@ -1,0 +1,10 @@
+/* 适用于<ol><li><a></li></ol>，美化链接样式 */
+.link-list >li a {
+    text-decoration: none;
+    color: black
+}
+.link-list >li a:hover
+{
+    text-decoration: underline;
+    color: orange;
+}
