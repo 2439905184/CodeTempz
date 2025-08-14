@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画廊</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        .swiper {
+            width: 100%;
+            height: 80vh;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .swiper-button-next, .swiper-button-prev {
+        color: #000;
+        border: 2px solid #000;
+        background: rgba(255, 255, 255, 0.8);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <h2 align="center">画廊</h2>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../img/Desert.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/Hydrangeas.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/Tulips.jpg" alt="">
+            </div>
+        </div>
+        <!-- 导航按钮 -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- 分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
+            },
+            loop: true
+        });
+    </script>
+</body>
+</html>
