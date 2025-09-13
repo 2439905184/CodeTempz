@@ -1,0 +1,52 @@
+.plugin-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.plugin-card {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.plugin-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.plugin-description {
+    color: #666;
+    margin-bottom: 12px;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.plugin-link {
+    color: #0066cc;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.plugin-link:hover {
+    text-decoration: underline;
+}
+
+/* 响应式设计 - 当屏幕宽度小于640px时，调整卡片宽度 */
+@media (max-width: 640px) {
+    .plugin-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
