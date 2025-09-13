@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更美观的网页卡片布局</title>
+    <style>
+        .plugin-container {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              justify-content: flex-start;
+          }
+          
+          .plugin-card {
+              width: 300px;
+              height: 300px;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              padding: 16px;
+              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              box-sizing: border-box;
+          }
+          
+          .plugin-name {
+              font-size: 1.2em;
+              font-weight: bold;
+              margin-bottom: 8px;
+          }
+          
+          .plugin-description {
+              color: #666;
+              margin-bottom: 12px;
+              flex-grow: 1;
+              overflow: hidden;
+              text-overflow: ellipsis;
+          }
+          
+          .plugin-link {
+              color: #0066cc;
+              text-decoration: none;
+              align-self: flex-start;
+          }
+          
+          .plugin-link:hover {
+              text-decoration: underline;
+          }
+          
+          /* 响应式设计 - 当屏幕宽度小于640px时，调整卡片宽度 */
+          @media (max-width: 640px) {
+              .plugin-card {
+                  width: 100%;
+                  height: auto;
+                  aspect-ratio: 1 / 1;
+              }
+          }
+          </style>
+</head>
+<body>
+    <div class="plugin-container">
+        <div class="plugin-card">
+            <div class="plugin-name">Godot Debug Menu</div>
+            <div class="plugin-description">可以在 GodotEngine 4.x 项目中显示游戏内性能指标的插件。支持紧凑和详细的显示模式，显示 FPS、帧时间、CPU 时间、GPU 时间图以及硬件信息，支持所有渲染方法和 2D/3D 项目。</div>
+            <a class="plugin-link" href="https://github.com/godot-extended-libraries/godot-debug-menu-demo">访问插件页面</a>
+        </div>
+        
+        <div class="plugin-card">
+            <div class="plugin-name">Konado Visual Novel Framework</div>
+            <div class="plugin-description">基于Godot Engine的视觉小说框架，专为视觉小说开发者设计。</div>
+            <a class="plugin-link" href="https://godothub.com/konado/">访问插件页面</a>
+        </div>
+        
+        <div class="plugin-card">
+            <div class="plugin-name">Godot VLC 插件</div>
+            <div class="plugin-description">用 Godot 播放任何视频格式的插件，扩展了Godot的多媒体能力。</div>
+            <a class="plugin-link" href="https://b23.tv/Vber3XY">查看介绍视频</a>
+        </div>
+    </div>
+</body>
+</html>
