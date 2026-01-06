@@ -1,5 +1,5 @@
 //打印出object对象所有的属性 返回包含object所有属性 的数组
-function Litte_sandbox_pring_obj_all(obj)
+function dump_object(obj)
 {
   var array=[]
   for (var item in obj)
