@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓝色导航栏</title>
+    <style>
+        nav{
+            background-color: #2185d0;
+            height: 49px;
+            display: flex; /* 使用flexbox布局 */
+            align-items: center; /* 垂直居中 */
+            padding: 0 10px; /* 添加左右边距 */
+        }
+        nav >a
+        {
+            color: white;
+            text-decoration-line: none;
+            padding: 8px 12px; /* 添加内边距使链接更好点击 */
+            border-radius: 4px; /* 添加圆角 */
+            margin-right: 5px; /* 添加右边距 */
+            display: inline-block; /* 确保显示为块级元素 */
+            line-height: 32px; /* 设置行高与高度一致实现文字垂直居中 */
+        }
+        nav >a:hover
+        {
+            background-color: #1e7bc0;
+        }
+        nav >a:active
+        {
+            background-color: #8ab6d8;
+        }
+        nav > a.current
+        {
+            background-color: #8ab6d8;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a target="_blank" href="game.html">游戏</a>
+        <a target="_blank" href="software.html">软件</a>
+        <a target="_blank" href="https://www.missevan.com/mdrama/66736">自制音乐</a>
+        <a target="_blank" href="anime.html">自制动画</a>
+        <a target="_blank" href="https://space.bilibili.com/26680057?spm_id_from=333.1007.0.0">B站官方号</a>
+        <a target="_blank" href="jishu.html">技术研究</a>
+        <a target="_blank" href="history.html">发展历史</a>
+        <a target="_blank" href="about.html">关于小沙盒</a>
+        <a target="_blank" href="pgy.html">蒲公英内测分发上的app</a>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+                const nav = document.querySelector('nav');
+                const links = nav.querySelectorAll('a');
+                
+                // 为每个链接添加点击事件监听器
+                links.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        // 移除所有链接的current类
+                        links.forEach(l => l.classList.remove('current'));
+                        
+                        // 给当前点击的链接添加current类
+                        this.classList.add('current');
+                    });
+                });
+            });
+    </script>
+</body>
+</html>
