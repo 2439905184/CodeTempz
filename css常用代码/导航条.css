@@ -1,0 +1,10 @@
+.top-nav
+{
+    background-color: rgb(53, 94, 146);
+    padding: 5px;
+}
+.nav-item
+{
+    color: white;
+    text-decoration: none;
+}
